@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { NhostApolloProvider } from "@nhost/react-apollo";
+import { BrowserRouter, Route } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import { nhost } from "./lib/nhost";
+import ForgotPassowrdpage from "./pages/ForgotPassowrdpage";
+import SignUpPage from "./pages/SignUpPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NhostApolloProvider nhost={nhost}>
+        <NhostApolloProvider nhost={nhost}>
+          <BrowserRouter>
+            {/* <Route path="SignInPage" element={<SignIn />}>
+              <SignUpPage/>
+              </Route>
+            <Route path="SignUpPage" element={<SignUp />} /> */}
+            <ForgotPassowrdpage />
+          </BrowserRouter>
+        </NhostApolloProvider>
+      </NhostApolloProvider>
+    </>
   );
 }
-
-export default App;
