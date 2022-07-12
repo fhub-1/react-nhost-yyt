@@ -5,7 +5,10 @@ import SignUp from "../components/SignUp";
 const SignUpPage = () => {
   return (
     <>
-      <Helmet> <title>SignUpPage |Home</title></Helmet>
+      <Helmet>
+        {" "}
+        <title>SignUpPage |Home</title>
+      </Helmet>
       <div className="flex items-center justify-center py-7 h-screen">
         <SignUp />
       </div>

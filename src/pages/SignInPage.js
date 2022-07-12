@@ -1,18 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import ForgotPassword from "../components/ForgotPassword";
+import SignIn from "../components/SignIn";
 
-const ForgotPassowrdpage = () => {
+const SignInPage = () => {
   return (
     <>
       <Helmet>
-        <title>Forgot Password Page</title>
+        <title>Sign In</title>
       </Helmet>
       <div className="flex items-center justify-center py-7 h-screen">
-        <ForgotPassword />
+        <SignIn />
       </div>
     </>
   );
 };
 
-export default ForgotPassowrdpage;
+export default SignInPage;

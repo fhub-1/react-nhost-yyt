@@ -1,4 +1,4 @@
-const Input = ({ type = 'text', label = '', ...props }) => {
+const Input = ({ type = "text", label = "", ...props }) => {
   return (
     <div className="w-full flex flex-col">
       {label ? (

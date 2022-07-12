@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
-html, body{
-       @apply bg-slate-200; 
+html,
+body {
+  @apply bg-slate-200;
 }
 @tailwind utilities;

@@ -1,25 +1,33 @@
+import { NhostReactProvider } from "@nhost/react";
 import { NhostApolloProvider } from "@nhost/react-apollo";
-import { BrowserRouter, Route } from "react-router-dom";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import { nhost } from "./lib/nhost";
-import ForgotPassowrdpage from "./pages/ForgotPassowrdpage";
+import { Helmet } from "react-helmet";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import DashBoardPage from "./pages/DashBoardPage";
+import ForgotPassowordPage from "./pages/ForgotPassowordPage";
+import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 
+import { nhost } from "./lib/nhost";
 export default function App() {
   return (
     <>
-      <NhostApolloProvider nhost={nhost}>
-        <NhostApolloProvider nhost={nhost}>
-          <BrowserRouter>
-            {/* <Route path="SignInPage" element={<SignIn />}>
-              <SignUpPage/>
-              </Route>
-            <Route path="SignUpPage" element={<SignUp />} /> */}
-            <ForgotPassowrdpage />
-          </BrowserRouter>
-        </NhostApolloProvider>
-      </NhostApolloProvider>
+      <Helmet>
+        <title>Nhost | E-zone</title>
+      </Helmet>
+      <BrowserRouter>
+        <NhostReactProvider nhost={nhost}>
+          <NhostApolloProvider nhost={nhost}>
+            <Routes>
+              <Route path="/" element={<DashBoardPage/>} />
+              <Route path="SignInPage" element={<SignInPage/>} />
+              <Route path="SignUpPage" element={<SignUpPage />} />
+              <Route path="ForgotPassowordPage" element={<ForgotPassowordPage/>} />
+                    
+            </Routes>
+          </NhostApolloProvider>
+        </NhostReactProvider>
+      </BrowserRouter>
     </>
   );
 }
