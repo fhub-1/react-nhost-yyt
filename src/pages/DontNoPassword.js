@@ -1,8 +1,8 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import ForgotPassword from "../components/ForgotPassword";
+import React from 'react'
+import { Helmet } from 'react-helmet';
+import ForgotPassword from '../components/ForgotPassword';
 
-const ForgotPassowordPage = () => {
+const DontNoPassword = () => {
   return (
     <>
       <Helmet>
@@ -14,6 +14,6 @@ const ForgotPassowordPage = () => {
       </div>
     </>
   );
-};
+}
 
-export default ForgotPassowordPage;
+export default DontNoPassword;

@@ -33,7 +33,8 @@ const SignIn = () => {
           <p className="mt-12 text-center">
             Please check your mailbox and follow the verification link to verify your email.
           </p>
-        ) : (
+          ) : (
+              <>
           <form onSubmit={handleOnSubmit} className="w-full">
             <Input
               type="email"
@@ -52,27 +53,25 @@ const SignIn = () => {
               required
             />
 
-            <button type="submit" disabled={disableForm} className="mt-6 w-full font-medium inline-flex justify-center items-center rounded-md p-3 text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed  disabled:hover:bg-teal-600 disabled:hover:border-bg-600 transition-colors">
+            <button type="submit" disabled={disableForm} className="mt-6 w-full font-medium inline-flex justify-center items-center rounded-md p-3 text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed  disabled:hover:bg-purple-600 disabled:hover:border-bg-600 transition-colors">
               {isLoading ? <Spinner size="sm" /> : 'Sign in'}
             </button>
 
             {isError ? <p className="mt-4 text-red-500 text-center">{error?.message}</p> : null}
-          </form>
+              </form>
+                <Link to="/DontNoPassword" className="text-purple-600 hover:text-purple-500 houver:underline  hover:underline-offset-1 transition">
+                  Forgot your Password
+              </Link>
+                </>
         )}
-          {/* <form className="w-full">
-            <div className="mt-12 w-full  flex  flex-col  items-center space-y-6">
-              <Input type="email" label="Email Address" required />
-              <Input type="password" label="Password" required />
-              <p className="sm">Forgot Password</p>
-            </div>
-          </form> */}
+         
          
         </div>
         <p className="sm:mt-8  text-black  text-center">
           Already have account
           <Link
             to="/signUpPage"
-            className="text-teal-500 hover:underline hover:underline-offset-1 transition mx-2"
+            className="text-purple-500 hover:underline hover:underline-offset-1 transition mx-2"
           >
             SignUp
           </Link>

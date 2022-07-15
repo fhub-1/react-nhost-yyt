@@ -3,6 +3,7 @@ import { useSignUpEmailPassword } from '@nhost/react';
 import { Link, Navigate } from 'react-router-dom';
 import Input from './Input';
 import Spinner from './Spinner';
+import Brand from "../assets/brand.png"
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -41,9 +42,9 @@ const SignUp = () => {
       <div className="sm:rounded-xl sm:shadow-md sm:border border-opacity-50 sm:bg-white px-4 sm:px-8 py-12 flex flex-col items-center">
         <div className="h-14">
           <img
-            src={process.env.PUBLIC_URL + 'logo.svg'}
+            src={Brand}
             alt="logo"
-            className="w-full h-full"
+            className="w-10 h-10"
           />
         </div>
 
@@ -92,7 +93,7 @@ const SignUp = () => {
             <button
               type="submit"
               disabled={disableForm}
-              className="mt-6 w-full font-medium inline-flex justify-center items-center rounded-md p-3 text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed  disabled:hover:bg-teal-600 disabled:hover:border-bg-600 transition-colors"
+              className="mt-6 w-full font-medium inline-flex justify-center items-center rounded-md p-3 text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed  disabled:hover:bg-purple-600 disabled:hover:border-bg-600 transition-colors"
             >
               {isLoading ? <Spinner size="sm" /> : 'Create account'}
             </button>
@@ -108,7 +109,7 @@ const SignUp = () => {
         Already have an account?{' '}
         <Link
           to="/signInPage"
-          className="text-teal-600 hover:text-teal-500 hover:underline hover:underline-offset-1 transition"
+          className="text-purple-600 hover:text-purple-500 hover:underline hover:underline-offset-1 transition"
         >
           Sign in
         </Link>
